@@ -4,7 +4,6 @@ import { useSelector } from "react-redux";
 import CheckOutProduct from "../components/CheckOutProduct";
 import Header from "../components/Header";
 import { selectItems, selectTotal } from "../slices/basketSlice";
-import Currency from "react-currency-formatter";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 
@@ -55,7 +54,7 @@ function CheckOut() {
             <h2 className="whitespace-nowrap">
               Subtotal ({items.length} items): {" "}
               <span>
-                <Currency quantity={total} currency="GBP"/>
+              {'$ '+ total}
               </span>
             </h2>
             <button 
